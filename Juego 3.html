@@ -1,274 +1,156 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASHYNO</title>
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
+        body {
             text-align: center;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #3d3837;
-        }
-    </style>
-    <title>Tabla Repartida</title>
-
- <link rel="stylesheet" href="estilo.css"
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blackjack</title>
-<style> ubicación de del archivo
-</style>
-</head>
-<body>
-<header>
-<h1>CASHYNO</h1>
-</header>
-  <section>
-  <p> <iframe src="https://drive.google.com/file/d/1y7ySjld8j_GN-TT-SBP6z1ApjEhGn5Ee/preview" width="300" height="200" allow="autoplay"></iframe>
-  </p>
-  </section>
-  
-  <section>
-<h2>INSTRUCCIONES DEL BLACKJACK</h2>
-<p>En esta página se presenta el conocido juego de azar, el blackjack. Presione "hit" para que el "dealer" entregue una carta, presione "stand" para terminar el tuno, por último, presione "restart" para iniciar una nueva partida. </p>
-<p>¡La suerte está de tu lado! </p>
-</section>
-  
-<div id="game">
-  <h1>Blackjack</h1>
-  <div id="table">
-    <div id="dealer-area">
-      <h2>Dealer's Cards</h2>
-      <div id="dealer-cards" class="card-container"></div>
-    </div>
-    <div id="player-area">
-      <h2>Your Cards</h2>
-      <div id="player-cards" class="card-container"></div>
-    </div>
-  </div>
-  <div id="controls">
-    <button id="hit">Hit</button>
-    <button id="stand">Stand</button>
-    <button id="restart">Restart</button>
-  </div>
-  <div id="status"></div>
-</div>
-  <footer>
-    <table>
-      <thead>
-        <tr>
-          <th><a href="index.html"/>Página principal</th>
-          <th><a href="Juego 1.html"/> Juego 1</a></th>
-          <th> <a href="Juego 2.html"/> Juego 2</th></a>
-          <th> <a href="Juego 3.html"/> Juego 1</a> </th>
-      </tr>
-    </thead>
-  <tbody>
-    <tr>
-
-<style>
-  body {
-  font-family: Arial, sans-serif;
-  background-color: #071643;
-  color: white;
-  text-align: center;
-  margin: 0;
-  padding: 20px;
-}
-
-#game {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background: 	#4768c9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-#table {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
-}
-
-.card-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.card {
-  width: 60px;
-  height: 90px;
-  border-radius: 5px;
-  background: white;
-  color: black;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.card.suit-Hearts::before {
-  content: '♥';
-  color: red;
-}
-
-.card.suit-Diamonds::before {
-  content: '♦';
-  color: red;
-}
-
-.card.suit-Clubs::before {
-  content: '♣';
-}
-
-.card.suit-Spades::before {
-  content: '♠';
-}
-
-#controls button {
-  margin: 5px;
-  padding: 10px 20px;
-  background: #000000;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-#controls button:hover {
-  background: #4765d9;
-}
-
-#status {
-  margin-top: 20px;
-  font-size: 18px;
-}
-footer {
-            background-color: #333;
+            font-family: Arial, sans-serif;
+            background-color: #222;
             color: white;
-            padding: rem;
+            margin-bottom: 60px; /* Espacio adicional para el footer */
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        .roulette-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+        }
+        .roulette {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            transition: transform 3s ease-out;
+            background: conic-gradient(
+                red 0deg 30deg,
+                black 30deg 60deg,
+                red 60deg 90deg,
+                black 90deg 120deg,
+                red 120deg 150deg,
+                black 150deg 180deg,
+                red 180deg 210deg,
+                black 210deg 240deg,
+                red 240deg 270deg,
+                black 270deg 300deg,
+                red 300deg 330deg,
+                black 330deg 360deg
+            );
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background: gold;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .bet-container {
+            margin-top: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        footer {
             position: fixed;
             bottom: 0;
-            width: 70%;
+            width: 100%;
+            background-color: #111;
+            padding: 20px;
+            color: white;
         }
-      </style>
-      
-      <script>
-        const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
-const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-let deck = [];
-let playerHand = [];
-let dealerHand = [];
-let isGameOver = false;
+        table {
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+        th {
+            padding: 10px;
+        }
+        a {
+            color: gold;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>CASHYNO</h1>
+    <div class="logo-container">
+        <iframe src="https://drive.google.com/file/d/1y7ySjld8j_GN-TT-SBP6z1ApjEhGn5Ee/preview" width="300" height="200" allow="autoplay"></iframe>
+    </div>
+    
+    <div class="bet-container">
+        <label for="bet">Apuesta a un número (0-36):</label>
+        <input type="number" id="bet" min="0" max="36">
+    </div>
+    
+    <div class="roulette-container">
+        <div class="roulette" id="roulette"></div>
+    </div>
+    
+    <button class="button" onclick="spinRoulette()">Girar</button>
+    <div class="result" id="result"></div>
 
-// Crear y barajar el mazo
-function createDeck() {
-  deck = [];
-  for (let suit of suits) {
-    for (let value of values) {
-      deck.push({ value, suit });
-    }
-  }
-  deck.sort(() => Math.random() - 0.5);
-}
+    <script>
+        const numbers = [
+            0, 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 23, 10,
+            5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26
+        ];
+        let isSpinning = false;
+        let lastRotation = 0;
 
-// Tomar una carta
-function drawCard() {
-  return deck.pop();
-}
+        function spinRoulette() {
+            if (isSpinning) return;
+            isSpinning = true;
+            
+            const roulette = document.getElementById("roulette");
+            const resultText = document.getElementById("result");
+            const bet = document.getElementById("bet").value;
+            
+            const randomIndex = Math.floor(Math.random() * numbers.length);
+            const winningNumber = numbers[randomIndex];
+            
+            lastRotation += 3600 + randomIndex * (360 / numbers.length);
+            roulette.style.transform = `rotate(${lastRotation}deg)`;
+            
+            setTimeout(() => {
+                resultText.textContent = `Número ganador: ${winningNumber}`;
+                
+                if (bet == winningNumber) {
+                    resultText.textContent += " ¡Has ganado!";
+                } else {
+                    resultText.textContent += " Inténtalo de nuevo.";
+                }
+                isSpinning = false;
+            }, 3000);
+        }
+    </script>
 
-// Añadir una carta visual al área correspondiente
-function addCardToUI(card, areaId) {
-  const cardElement = document.createElement('div');
-  cardElement.classList.add('card', `suit-${card.suit}`);
-  cardElement.textContent = card.value;
-  document.getElementById(areaId).appendChild(cardElement);
-}
-
-// Calcular el valor de la mano
-function calculateHandValue(hand) {
-  let total = 0, aces = 0;
-  for (let card of hand) {
-    if (['J', 'Q', 'K'].includes(card.value)) total += 10;
-    else if (card.value === 'A') {
-      total += 11;
-      aces++;
-    } else total += parseInt(card.value);
-  }
-  while (total > 21 && aces > 0) {
-    total -= 10;
-    aces--;
-  }
-  return total;
-}
-
-// Actualizar el estado del juego
-function checkGameStatus() {
-  const playerTotal = calculateHandValue(playerHand);
-  const dealerTotal = calculateHandValue(dealerHand);
-
-  if (playerTotal > 21) endGame('You busted! Dealer wins.');
-  else if (isGameOver) {
-    if (dealerTotal > 21) endGame('Dealer busted! You win!');
-    else if (playerTotal > dealerTotal) endGame('You win!');
-    else if (playerTotal < dealerTotal) endGame('Dealer wins.');
-    else endGame('It\'s a tie!');
-  }
-}
-
-// Terminar el juego
-function endGame(message) {
-  isGameOver = true;
-  document.getElementById('status').textContent = message;
-}
-
-// Empezar un nuevo juego
-function startGame() {
-  createDeck();
-  playerHand = [];
-  dealerHand = [];
-  isGameOver = false;
-  document.getElementById('status').textContent = '';
-  document.getElementById('player-cards').innerHTML = '';
-  document.getElementById('dealer-cards').innerHTML = '';
-}
-
-// Eventos para "Hit", "Stand", y "Restart"
-document.getElementById('hit').addEventListener('click', () => {
-  if (isGameOver) return;
-  const card = drawCard();
-  playerHand.push(card);
-  addCardToUI(card, 'player-cards');
-  checkGameStatus();
-});
-
-document.getElementById('stand').addEventListener('click', () => {
-  if (isGameOver) return;
-  while (calculateHandValue(dealerHand) < 17) {
-    const card = drawCard();
-    dealerHand.push(card);
-    addCardToUI(card, 'dealer-cards');
-  }
-  isGameOver = true;
-  checkGameStatus();
-});
-
-document.getElementById('restart').addEventListener('click', startGame);
-
-// Iniciar el juego
-startGame();
-
-      </script>
+    <footer>
+        <table>
+            <thead>
+                <tr>
+                    <th><a href="index.html">Página principal</a></th>
+                    <th><a href="Juego 1.html">Juego 1</a></th>
+                    <th><a href="Juego 2.html">Juego 2</a></th>
+                    <th><a href="Juego 3.html">Juego 3</a></th>
+                </tr>
+            </thead>
+        </table>
+    </footer>
+</body>
+</html>
